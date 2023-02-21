@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link src="(https://fonts.google.com/specimen/Ubuntu" rel="stylesheet" />
     <title>Multi-step form - FrontendMentor Project</title>
   </head>
   <body>
@@ -13,7 +13,7 @@
     <form>
       <!--   Steap 1 -->
       <div class="info">
-        <div class="step">
+        <div class="step1">
           <label for="name">Name</label>
           <input
             type="text"
@@ -40,10 +40,13 @@
             placeholder="e.g. +1 234 567 890"
             required
           /><br /><br />
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">
+            Next Step
+          </button>
         </div>
         <!--   Steap 2 -->
         <div class="plan">
-          <div class="step">
+          <div class="step2">
             <h2>Select you plan</h2>
             <p>You have the option of monthly or yearly billing.</p>
             <div class="plan-container">
@@ -67,34 +70,39 @@
                 <p>Yearly</p>
               </div>
             </div>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">
+              Next Step
+            </button>
           </div>
         </div>
       </div>
       <!-- Step 3 -->
-      <div>
-        <h3>Pick add-ons</h3>
-        <p>Add-ons help enhance your gaming experience .</p>
-        <div class="container">
-          <div class="container-service">
-            <div>
-              <p>Online service</p>
-              <p>Access to multiplayer games</p>
+      <div class="plan">
+        <div class="step3">
+          <h3>Pick add-ons</h3>
+          <p>Add-ons help enhance your gaming experience .</p>
+          <div class="container">
+            <div class="container-service">
+              <div>
+                <p>Online service</p>
+                <p>Access to multiplayer games</p>
+              </div>
+              <p>+$1/mo</p>
             </div>
-            <p>+$1/mo</p>
-          </div>
-          <div class="container-service">
-            <div>
-              <p>Larger storage</p>
-              <p>Extra 1TB of cloud save</p>
+            <div class="container-service">
+              <div>
+                <p>Larger storage</p>
+                <p>Extra 1TB of cloud save</p>
+              </div>
+              <p>+$2/mo</p>
             </div>
-            <p>+$2/mo</p>
-          </div>
-          <div class="container-service">
-            <div>
-              <p>LCustomizable profile</p>
-              <p>Custom theme on your profile</p>
+            <div class="container-service">
+              <div>
+                <p>LCustomizable profile</p>
+                <p>Custom theme on your profile</p>
+              </div>
+              <p>+$2/mo</p>
             </div>
-            <p>+$2/mo</p>
           </div>
         </div>
       </div>
