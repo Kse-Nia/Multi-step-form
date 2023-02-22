@@ -1,2 +1,85 @@
 @import "globals";
 @import "variables";
+
+// Sidebar
+.sidebar {
+  width: 20vw;
+  height: 95vh;
+  border-radius: 10px;
+  background-image: url("./assets/background-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  &_container {
+    max-width: 100%;
+    height: 50%;
+    margin: 10%;
+  }
+  &_stage {
+    margin: 10% auto 10%;
+    display: flex;
+    align-items: center;
+    &-numberStep {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid $Magnolia;
+      color: $White;
+      /*  background-color: $White; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: $font-weight-bold;
+      &-active {
+        background-color: $LightBlue;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    &-text {
+      margin-left: 3%;
+      display: flex;
+      flex-direction: column;
+      color: $Alabaster;
+    }
+  }
+}
+
+// Form
+
+.container {
+  width: 50%;
+  margin: 2rem 5rem 2rem 5rem;
+}
+
+.tabpanel {
+  &-input {
+    background-color: blue;
+    width: 100%;
+    height: 6vh;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 1rem 0;
+
+    &-data {
+      min-width: 50%;
+      margin-top: 1rem;
+      border: none;
+      border-bottom: 1px solid $LightGray;
+      background-color: $Alabaster;
+      color: $MarineBlue;
+      font-size: 1rem;
+      font-weight: $font-weight-normal;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

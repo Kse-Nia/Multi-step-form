@@ -4,120 +4,97 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <link src="(https://fonts.google.com/specimen/Ubuntu" rel="stylesheet" />
     <title>Multi-step form - FrontendMentor Project</title>
   </head>
   <body>
-    <h1>Personnal info</h1>
-    <p>Please provide your name, email address, and phone number.</p>
-    <form>
-      <!--   Steap 1 -->
-      <div class="info">
-        <div class="step1">
-          <label for="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="e.g. Stephen King"
-            required
-          /><br /><br />
-
-          <label for="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="e.g. stephenking@lorem.com"
-            required
-          /><br /><br />
-
-          <label for="phone">Phone</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="e.g. +1 234 567 890"
-            required
-          /><br /><br />
-          <button type="button" id="nextBtn" onclick="nextPrev(1)">
-            Next Step
-          </button>
+    <!--    Side -->
+    <div class="sidebar">
+      <div class="sidebar_container">
+        <div class="sidebar_stage">
+          <p class="sidebar_stage-numberStep-active">1</p>
+          <div class="sidebar_stage-text">
+            <p>step 1</p>
+            <p>your info</p>
+          </div>
         </div>
-        <!--   Steap 2 -->
-        <div class="plan">
-          <div class="step2">
-            <h2>Select you plan</h2>
-            <p>You have the option of monthly or yearly billing.</p>
-            <div class="plan-container">
-              <div class="plan-types">
-                <div class="plan-icon"></div>
-                <p>Arcade</p>
-                <p>$9/mo</p>
-              </div>
-              <div class="plan-types">
-                <div class="plan-icon"></div>
-                <p>Advanced</p>
-                <p>$12/mo</p>
-              </div>
-              <div class="plan-types">
-                <div class="plan-icon"></div>
-                <p>Pro</p>
-                <p>$15/mo</p>
-              </div>
-              <div class="plan-billing">
-                <p>Monthly</p>
-                <p>Yearly</p>
-              </div>
-            </div>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">
-              Next Step
-            </button>
+        <div class="sidebar_stage">
+          <p class="sidebar_stage-numberStep">2</p>
+          <div class="sidebar_stage-text">
+            <p>step 2</p>
+            <p>select plan</p>
+          </div>
+        </div>
+        <div class="sidebar_stage">
+          <p class="sidebar_stage-numberStep">3</p>
+          <div class="sidebar_stage-text">
+            <p>step 3</p>
+            <p>add-ons</p>
+          </div>
+        </div>
+        <div class="sidebar_stage">
+          <p class="sidebar_stage-numberStep">4</p>
+          <div class="sidebar_stage-text">
+            <p>step 4</p>
+            <p>summary</p>
           </div>
         </div>
       </div>
-      <!-- Step 3 -->
-      <div class="plan">
-        <div class="step3">
-          <h3>Pick add-ons</h3>
-          <p>Add-ons help enhance your gaming experience .</p>
-          <div class="container">
-            <div class="container-service">
-              <div>
-                <p>Online service</p>
-                <p>Access to multiplayer games</p>
-              </div>
-              <p>+$1/mo</p>
-            </div>
-            <div class="container-service">
-              <div>
-                <p>Larger storage</p>
-                <p>Extra 1TB of cloud save</p>
-              </div>
-              <p>+$2/mo</p>
-            </div>
-            <div class="container-service">
-              <div>
-                <p>LCustomizable profile</p>
-                <p>Custom theme on your profile</p>
-              </div>
-              <p>+$2/mo</p>
-            </div>
+    </div>
+    <!-- Form Container -->
+    <div class="container">
+      <form class="container_form" action="">
+        <!--    Personnal info -->
+        <div role="tabpanel" id="personnal">
+          <h1>Personnal info</h1>
+          <p>Please provide your name, email address, and phone number.</p>
+          <div class="tabpanel-data">
+            <label class="tabpanel-label" for="name">Name</label>
+            <input
+              class="tabpanel-input"
+              type="text"
+              name="name"
+              placeholder="e.g. Stephen King"
+            />
+            <label for="email">Email Address</label>
+            <input
+              class="tabpanel-input"
+              type="email"
+              name="email"
+              placeholder="e.g. stephenking@lorem.com"
+            />
+            <label for="email">Phone Number</label>
+            <input
+              class="tabpanel-input"
+              type="number"
+              name="phone"
+              placeholder="e.g. +1 234 567 890"
+            />
           </div>
         </div>
-      </div>
-      <!--  Next step -->
-      <div style="overflow: auto">
-        <div style="float: right">
-          <button type="button" id="prevBtn" onclick="nextPrev(-1)">
-            Go Back
-          </button>
-          <button type="button" id="nextBtn" onclick="nextPrev(1)">
-            Next Step
-          </button>
+        <!--  Select plan -->
+        <div role="tabpanel" id="plan">
+          <h1>Select your plan</h1>
+          <p>You have the option of monthly or yearly billing.</p>
         </div>
-      </div>
-    </form>
+        <!--   add-ons -->
+        <div role="tabpanel" id="addon">
+          <h1>Add-ons</h1>
+          <p>Add-ons help your gaming experience.</p>
+        </div>
+        <!--   summary -->
+        <div role="tabpanel" id="summaty">
+          <h1>Summary</h1>
+          <p>Double check everything looks OK before confirming.</p>
+        </div>
+        <div class="pagination">
+          <a class="btn hidden" id="prev">Previous</a>
+          <a class="btn" id="next">Continue</a>
+          <button class="btn btn-submit hidden" id="submit">Submit</button>
+        </div>
+      </form>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
